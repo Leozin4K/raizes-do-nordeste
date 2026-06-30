@@ -80,7 +80,3 @@ ou
 
 Documentação Swagger
 Disponível em: http://localhost:3000/api-docs
-
-✅ Agora você tem um README em formato simples, fácil de copiar e colar.
-
-👉 Quer que eu também monte um fluxo de uso completo (registrar usuário → login → criar unidade → criar produto → criar pedido → pagar → consultar fidelidade) para servir como exemplo de teste da API?
