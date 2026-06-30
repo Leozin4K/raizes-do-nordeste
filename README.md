@@ -13,6 +13,10 @@ Instalar dependências: npm install
 Rodar migrations do Prisma: npx prisma migrate dev
 Abrir Prisma Studio para visualizar dados: npx prisma studio
 Iniciar servidor: npm run dev
+
+Caso prefira, pode resetar o banco de dados para apagar dados anteriores, ao rodar 
+"npx prisma migrate reset" no terminal.
+
 -----------------
 Autenticação
 POST /auth/register → Criar usuário (CLIENTE ou ADMIN)
