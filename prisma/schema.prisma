@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+generator erd {
+  provider = "prisma-erd-generator"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuario {
+  id                     Int        @id @default(autoincrement())
+  nome                   String
+  email                  String     @unique
+  senha                  String
+  role                   Role       @default(CLIENTE)
+  consentimentoFidelidade Boolean   @default(true)
+
+  pedidos                Pedido[]
+  fidelidade             Fidelidade[]
+}
+
+enum CanalPedido {
+  APP
+  TOTEM
+  BALCAO
+  PICKUP
+  WEB
+}
+
+model Unidade {
+  id        Int       @id @default(autoincrement())
+  nome      String
+  endereco  String
+  produtos  Produto[]
+  pedidos   Pedido[]
+}
+
+model Pedido {
+  id             Int          @id @default(autoincrement())
+  canalPedido    CanalPedido
+  formaPagamento String
+  status         StatusPedido
+  usuarioId      Int
+  usuario        Usuario      @relation(fields: [usuarioId], references: [id])
+  unidadeId      Int          @default(1)
+  unidade        Unidade      @relation(fields: [unidadeId], references: [id])
+  itens          ItemPedido[]
+  createdAt      DateTime     @default(now())
+}
+
+model ItemPedido {
+  id         Int     @id @default(autoincrement())
+  pedidoId   Int
+  pedido     Pedido  @relation(fields: [pedidoId], references: [id])
+  produtoId  Int
+  produto    Produto @relation(fields: [produtoId], references: [id])
+  quantidade Int
+}
+
+model Produto {
+  id        Int     @id @default(autoincrement())
+  nome      String
+  descricao String
+  preco     Float
+  estoque   Int
+  unidadeId Int     @default(1)
+  unidade   Unidade @relation(fields: [unidadeId], references: [id])
+  itens     ItemPedido[]
+}
+
+model Fidelidade {
+  id        Int      @id @default(autoincrement())
+  usuarioId Int
+  usuario   Usuario  @relation(fields: [usuarioId], references: [id])
+  pontos    Int
+  tipo      TipoFidelidade
+  createdAt DateTime @default(now())
+}
+
+enum Role {
+  CLIENTE
+  ADMIN
+}
+
+enum StatusPedido {
+  AGUARDANDO_PAGAMENTO
+  PAGO
+  CANCELADO
+  ENTREGUE
+}
+
+enum TipoFidelidade {
+  ACUMULO
+  RESGATE
+}
+
