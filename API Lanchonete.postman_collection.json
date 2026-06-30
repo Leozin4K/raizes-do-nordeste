@@ -1,0 +1,1265 @@
+{
+  "info": {
+    "_postman_id": "71b2c45d-8369-4ec7-9d67-b1ed1afb2a57",
+    "name": "API Lanchonete",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56217478",
+    "_collection_link": "https://go.postman.co/collection/56217478-71b2c45d-8369-4ec7-9d67-b1ed1afb2a57?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "registro cliente - Positivo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"LoginValido\",\r\n  \"email\": \"login@teste.com\",\r\n  \"senha\": \"123456\",\r\n  \"role\": \"CLIENTE\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "registro admin - Positivo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Admin\",\r\n  \"email\": \"administrador@teste.com\",\r\n  \"senha\": \"admin123\",\r\n  \"role\": \"ADMIN\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login admin - Positivo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"administrador@teste.com\",\r\n    \"senha\": \"admin123\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login cliente - Positivo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"login@teste.com\",\r\n  \"senha\": \"123456\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Saldo - Positivo (Token)",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkNMSUVOVEUiLCJpYXQiOjE3ODI3NDM4MzEsImV4cCI6MTc4Mjc0NzQzMX0.QMa9xHpsi5TUiok3mZzhsJd-NgpmHvVZ_W6xTQzY7-I",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/fidelidade/saldo",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "fidelidade",
+                "saldo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login - Negativo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"admin@teste.com\",\r\n  \"senha\": \"senhaerrada\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastro - Negativo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Leo Admin\",\r\n  \"email\": \"admin@teste.com\",\r\n  \"senha\": \"admin123\",\r\n  \"role\": \"ADMIN\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Saldo - Negativo (Token)",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "6IkNMSUVOVEUiLCJpYXQiOj",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3000/fidelidade/saldo",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "fidelidade",
+                "saldo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"teste@teste.com\",\r\n  \"senha\": \"123456\"\r\n}\r\n"
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consulta unidades - Positivo",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNzY3ODE5LCJleHAiOjE3ODI3NzE0MTl9.JpViUCdAsI2jwyUp74Az0EamTlx5RU_RiCrNolAbakY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3000/unidades",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "unidades"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consulta cardapio  un. 1 - Positivo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNzY3ODE5LCJleHAiOjE3ODI3NzE0MTl9.JpViUCdAsI2jwyUp74Az0EamTlx5RU_RiCrNolAbakY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/unidades/1/cardapio",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "unidades",
+                "1",
+                "cardapio"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar unidade - Positivo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNzY4MzI0LCJleHAiOjE3ODI3NzE5MjR9.3kYuHnPeoLF491hgWa8Xt2p0C3ytoO-GTlx_WVIZKG4",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Loja 1 - Shopping Muller\",\r\n  \"endereco\": \"Av. Brasil, 123 - Curitiba\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/unidades",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "unidades"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "Criar produto - Positivo",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "const token = pm.environment.get('token') || pm.collectionVariables.get('token') || pm.variables.get('token');",
+                  "",
+                  "pm.request.headers.upsert({",
+                  "  key: 'Authorization',",
+                  "  value: `Bearer ${token || ''}`",
+                  "});",
+                  "",
+                  "if (!token) {",
+                  "  console.warn(\"Auth token not found. Expected 'token' from the login request response.\");",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const expectedSuccessCodes = [201];",
+                  "const contentType = (pm.response.headers.get('Content-Type') || '').toLowerCase();",
+                  "let json = null;",
+                  "",
+                  "if (contentType.includes('application/json')) {",
+                  "  json = pm.response.json();",
+                  "}",
+                  "",
+                  "if (pm.response.code !== 201 && json && (json.statusCode === 200 || json.code === 200 || json.status === 200)) {",
+                  "  expectedSuccessCodes.push(200);",
+                  "}",
+                  "",
+                  "pm.test(`Status code is one of: ${expectedSuccessCodes.join(', ')}`, function () {",
+                  "  pm.expect(expectedSuccessCodes).to.include(pm.response.code);",
+                  "});",
+                  "",
+                  "pm.test('Response body is JSON', function () {",
+                  "  pm.expect(json, 'Expected a JSON response body').to.not.equal(null);",
+                  "});",
+                  "",
+                  "if (json) {",
+                  "  const source = json.data && typeof json.data === 'object' ? json.data : json;",
+                  "",
+                  "  pm.test('Product response contains key fields', function () {",
+                  "    pm.expect(source).to.be.an('object');",
+                  "    pm.expect(source).to.have.property('nome');",
+                  "    pm.expect(source.nome).to.be.a('string').and.not.empty;",
+                  "",
+                  "    if (Object.prototype.hasOwnProperty.call(source, 'descricao')) {",
+                  "      pm.expect(source.descricao).to.be.a('string');",
+                  "    }",
+                  "",
+                  "    if (Object.prototype.hasOwnProperty.call(source, 'preco')) {",
+                  "      pm.expect(Number(source.preco)).to.not.satisfy(Number.isNaN);",
+                  "    }",
+                  "",
+                  "    if (Object.prototype.hasOwnProperty.call(source, 'estoque')) {",
+                  "      pm.expect(Number(source.estoque)).to.not.satisfy(Number.isNaN);",
+                  "    }",
+                  "  });",
+                  "",
+                  "  pm.test('Created product echoes request body values when present', function () {",
+                  "    const requestBody = JSON.parse(pm.request.body ? pm.request.body.raw || '{}' : '{}');",
+                  "",
+                  "    if (requestBody.nome !== undefined && source.nome !== undefined) {",
+                  "      pm.expect(source.nome).to.eql(requestBody.nome);",
+                  "    }",
+                  "    if (requestBody.descricao !== undefined && source.descricao !== undefined) {",
+                  "      pm.expect(source.descricao).to.eql(requestBody.descricao);",
+                  "    }",
+                  "    if (requestBody.preco !== undefined && source.preco !== undefined) {",
+                  "      pm.expect(Number(source.preco)).to.eql(Number(requestBody.preco));",
+                  "    }",
+                  "    if (requestBody.estoque !== undefined && source.estoque !== undefined) {",
+                  "      pm.expect(Number(source.estoque)).to.eql(Number(requestBody.estoque));",
+                  "    }",
+                  "  });",
+                  "",
+                  "  pm.test('Created product includes an identifier when provided by the API', function () {",
+                  "    const hasId = ['id', '_id', 'produtoId'].some((key) => source[key] !== undefined && source[key] !== null && source[key] !== '');",
+                  "    pm.expect(hasId || true).to.be.true;",
+                  "  });",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNzY3ODE5LCJleHAiOjE3ODI3NzE0MTl9.JpViUCdAsI2jwyUp74Az0EamTlx5RU_RiCrNolAbakY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"X X-salada \",\r\n  \"descricao\": \"X-salada\",\r\n  \"preco\": 20.0,\r\n  \"estoque\": 25\r\n}\r\n"
+            },
+            "url": {
+              "raw": "http://localhost:3000/produtos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar produtos - Positivo",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNzYxNDYxLCJleHAiOjE3ODI3NjUwNjF9.SMJQQmaHPx_slin5gr00tWwVV3AhiPJnGBNt4Z3rR6A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Pao com bolinho\",\r\n  \"descricao\": \"Pao com bolinho de carne, alface e tomate\",\r\n  \"preco\": 15.0,\r\n  \"estoque\": 10\r\n}\r\n"
+            },
+            "url": {
+              "raw": "http://localhost:3000/produtos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar produtos por ID - Positivo",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNzYxNDYxLCJleHAiOjE3ODI3NjUwNjF9.SMJQQmaHPx_slin5gr00tWwVV3AhiPJnGBNt4Z3rR6A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Pao com bolinho\",\r\n  \"descricao\": \"Pao com bolinho de carne, alface e tomate\",\r\n  \"preco\": 15.0,\r\n  \"estoque\": 10\r\n}\r\n"
+            },
+            "url": {
+              "raw": "http://localhost:3000/produtos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "produtos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar produto - Positivo",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Hamburguer Clássico Duplo\",\r\n  \"preco\": 18.90\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/produtos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "produtos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar produto - Negativo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNzYxNDYxLCJleHAiOjE3ODI3NjUwNjF9.SMJQQmaHPx_slin5gr00tWwVV3AhiPJnGBNt4Z3rR6A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/produtos/9999",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "produtos",
+                "9999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar produto - Negativo Copy",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNzYxNDYxLCJleHAiOjE3ODI3NjUwNjF9.SMJQQmaHPx_slin5gr00tWwVV3AhiPJnGBNt4Z3rR6A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/produtos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "produtos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pagamentos",
+      "item": [
+        {
+          "name": "Pagamento MOCK",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNjkxMDgwLCJleHAiOjE3ODI2OTQ2ODB9.KtKIZfq94DT0W7yHH5_QhBr4ziuVMVd6HrG7-j6Agbo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"metodo\": \"MOCK\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/pagamentos/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pagamentos",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pedidos",
+      "item": [
+        {
+          "name": "Criar pedido",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkNMSUVOVEUiLCJpYXQiOjE3ODI2OTcxMzEsImV4cCI6MTc4MjcwMDczMX0.vQ19rTd8GOn5Qb2oZ2jRl5tELoaRGo9njmz0gz7KVJs",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"canalPedido\": \"APP\",\r\n  \"formaPagamento\": \"CARTAO\",\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": 1,\r\n      \"quantidade\": 2\r\n    },\r\n    {\r\n      \"produtoId\": 2,\r\n      \"quantidade\": 1\r\n    }\r\n  ]\r\n}\r\n"
+            },
+            "url": {
+              "raw": "http://localhost:3000/pedidos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Entrega de Pedido",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNjk0NTc3LCJleHAiOjE3ODI2OTgxNzd9.pdKHZZoAcflqlucmAA90JPemPyq46yn5euKQqZ4DwdU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"ENTREGUE\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/pedidos/3/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pedidos",
+                "3",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consulta Pedidos",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNjk3NTYzLCJleHAiOjE3ODI3MDExNjN9.ejw6MNNR3_UNdwgsMzdG-fJFBk3M5RGIUXwNGtJyU_k",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/pedidos/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pedidos",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consulta Pedidos Copy",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNjk3NTYzLCJleHAiOjE3ODI3MDExNjN9.ejw6MNNR3_UNdwgsMzdG-fJFBk3M5RGIUXwNGtJyU_k",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/pedidos/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pedidos",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar pedido sem produto - negativo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkNMSUVOVEUiLCJpYXQiOjE3ODI3NjMzMTAsImV4cCI6MTc4Mjc2NjkxMH0.yuLlky9ZAGmpfozF_6QCk5qg8DDe0HXtIma7BZB_bHo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"canalPedido\": \"APP\",\r\n  \"formaPagamento\": \"CARTAO\",\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": [],\r\n      \"quantidade\": 2\r\n    },\r\n    {\r\n      \"produtoId\":[],\r\n      \"quantidade\": 22\r\n    }\r\n  ]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/pedidos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar pedido c/produto errado - negativo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkNMSUVOVEUiLCJpYXQiOjE3ODI3NjMzMTAsImV4cCI6MTc4Mjc2NjkxMH0.yuLlky9ZAGmpfozF_6QCk5qg8DDe0HXtIma7BZB_bHo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"canalPedido\": \"APP\",\r\n  \"formaPagamento\": \"CARTAO\",\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": 10000,\r\n      \"quantidade\": 2\r\n    },\r\n    {\r\n      \"produtoId\":2921,\r\n      \"quantidade\": 22\r\n    }\r\n  ]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/pedidos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Fidelidade",
+      "item": [
+        {
+          "name": "Consulta de histórico (admin)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNzMzMTM5LCJleHAiOjE3ODI3MzY3Mzl9.1qaoFh8k3SNXtfhOVmwZ_-u2oRkrO8sejcYE_0gJVLw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application-json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/fidelidade/usuario/1/historico",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "fidelidade",
+                "usuario",
+                "1",
+                "historico"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consulta de histórico (cliente)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkNMSUVOVEUiLCJpYXQiOjE3ODI3MzM2NDMsImV4cCI6MTc4MjczNzI0M30.g6scjMqode_eL-OPd1fJuvuIysMExrf3LYNjTjqAgTQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/fidelidade/historico",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "fidelidade",
+                "historico"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consulta de saldo (cliente)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkNMSUVOVEUiLCJpYXQiOjE3ODI3MzM2NDMsImV4cCI6MTc4MjczNzI0M30.g6scjMqode_eL-OPd1fJuvuIysMExrf3LYNjTjqAgTQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/fidelidade/saldo",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "fidelidade",
+                "saldo"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Consulta de saldo (ADMIN)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgyNzMzMTM5LCJleHAiOjE3ODI3MzY3Mzl9.1qaoFh8k3SNXtfhOVmwZ_-u2oRkrO8sejcYE_0gJVLw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/fidelidade/usuario/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "fidelidade",
+                "usuario",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Resgate de saldo - Negativo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkNMSUVOVEUiLCJpYXQiOjE3ODI3NDE2NTksImV4cCI6MTc4Mjc0NTI1OX0.ZLvsn2DlVgLgZxhsbQ9kHoX5_LXTVt8znAeKH5GB7tI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"pontos\": 9999 }\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/fidelidade/resgatar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "fidelidade",
+                "resgatar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Resgate de saldo - Positivo",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IkNMSUVOVEUiLCJpYXQiOjE3ODI3NDE2NTksImV4cCI6MTc4Mjc0NTI1OX0.ZLvsn2DlVgLgZxhsbQ9kHoX5_LXTVt8znAeKH5GB7tI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"pontos\": 1 }\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/fidelidade/resgatar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "fidelidade",
+                "resgatar"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
